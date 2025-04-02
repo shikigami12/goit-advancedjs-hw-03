@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>1-timer</title>
+  <link rel="stylesheet" href="./css/1-timer.css">
+</head>
+<body>
+<div class="container">
+  <div class="timer-wrapper">
+    <h1>Timer</h1>
+
+    <label for="datetime-picker">
+      <input type="text" id="datetime-picker"/>
+    </label>
+    <button type="button" data-start>Start</button>
+
+    <div class="timer">
+      <div class="field">
+        <span class="value" data-days>00</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="field">
+        <span class="value" data-hours>00</span>
+        <span class="label">Hours</span>
+      </div>
+      <div class="field">
+        <span class="value" data-minutes>00</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="field">
+        <span class="value" data-seconds>00</span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./js/1-timer.js" type="module"></script>
+</body>
+</html>
