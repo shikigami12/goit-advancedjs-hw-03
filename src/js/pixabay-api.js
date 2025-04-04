@@ -13,7 +13,7 @@ class RequestConfig {
       q: '',
       image_type: 'photo',
       orientation: 'horizontal',
-      safesearch: true
+      safesearch: true,
     };
   }
 

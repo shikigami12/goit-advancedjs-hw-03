@@ -35,7 +35,7 @@ class PixabayImage {
  */
 class ImageRenderer {
   constructor() {
-    this._imageElement = document.createElement("img");
+    this._imageElement = document.createElement('img');
   }
 
   /**
@@ -48,8 +48,8 @@ class ImageRenderer {
     this._imageElement.width = 360;
     this._imageElement.height = 200;
     this._imageElement.title = image.tags;
-    this._imageElement.setAttribute("data-id", image.id.toString());
-    this._imageElement.setAttribute("data-user", image.user);
+    this._imageElement.setAttribute('data-id', image.id.toString());
+    this._imageElement.setAttribute('data-user', image.user);
   }
 
   /**
@@ -72,7 +72,7 @@ class GalleryRenderer {
    */
   constructor(gallerySelector, parentElement) {
     this._parentElement = parentElement;
-    this._galleryElement = document.createElement("ul");
+    this._galleryElement = document.createElement('ul');
     this._galleryElement.classList.add(gallerySelector);
   }
 
@@ -83,8 +83,8 @@ class GalleryRenderer {
   addImage(image) {
     const imageRenderer = new ImageRenderer();
     imageRenderer.setImage(image);
-    const listItem = document.createElement("li");
-    const link = document.createElement("a");
+    const listItem = document.createElement('li');
+    const link = document.createElement('a');
     link.href = image.imageURL;
     link.append(imageRenderer.render());
     link.append(this._generateDescription(image));
@@ -99,24 +99,24 @@ class GalleryRenderer {
    * @private
    */
   _generateDescription(image) {
-    const headers = ["Likes", "Views", "Comments", "Downloads"];
-    const table = document.createElement("table");
-    const headerRow = document.createElement("tr");
+    const headers = ['Likes', 'Views', 'Comments', 'Downloads'];
+    const table = document.createElement('table');
+    const headerRow = document.createElement('tr');
     headers.forEach(header => {
-      const th = document.createElement("th");
+      const th = document.createElement('th');
       th.textContent = header;
       headerRow.appendChild(th);
     });
     table.appendChild(headerRow);
-    const valuesRow = document.createElement("tr");
+    const valuesRow = document.createElement('tr');
     const values = [
       image.likes,
       image.views,
       image.comments,
-      image.downloads
+      image.downloads,
     ];
     values.forEach(value => {
-      const td = document.createElement("td");
+      const td = document.createElement('td');
       td.textContent = `${value}`;
       valuesRow.appendChild(td);
     });
@@ -139,9 +139,9 @@ class GalleryRenderer {
    * Clears the gallery.
    */
   clear() {
-    this._galleryElement.innerHTML = "";
-    this._parentElement.innerHTML = "";
-    }
+    this._galleryElement.innerHTML = '';
+    this._parentElement.innerHTML = '';
+  }
 }
 
 export { GalleryRenderer, PixabayImage, ImageRenderer };
