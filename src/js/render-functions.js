@@ -72,6 +72,18 @@ class GalleryRenderer {
    */
   constructor(gallerySelector, parentElement) {
     this._parentElement = parentElement;
+    if (!this._parentElement) {
+      throw new Error(`Parent element ${parentElement} not found`);
+    }
+
+    // if parent element already has a child with the same class, use that
+    const existingGallery = this._parentElement.querySelector(`.${gallerySelector}`);
+    if (existingGallery) {
+      this._galleryElement = existingGallery;
+      return;
+    }
+
+    // create a new gallery element
     this._galleryElement = document.createElement('ul');
     this._galleryElement.classList.add(gallerySelector);
   }
